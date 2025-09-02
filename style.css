@@ -1,0 +1,312 @@
+/* Import Bangla font */
+@import url('https://fonts.maateen.me/bangla/font.css');
+
+:root {
+  --main-bg: linear-gradient(120deg, #fffbe8 20%, #fdc771 80%);
+  --primary: #bf262c;
+  --accent: #ffb827;
+  --text-dark: #273043;
+  --btn-bg: linear-gradient(90deg, #bf262c 0%, #ffb827 100%);
+  --input-focus: #fdc771;
+  --upload-bg: #fdf3e3;
+  --upload-accent: #bf262c;
+}
+
+/* Base typography and layout */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--main-bg);
+  color: var(--text-dark);
+  min-height: 100vh;
+  font-family: 'Bangla', 'Poppins', 'Roboto', Arial, sans-serif;
+  position: relative;
+}
+
+/* Hero background */
+.hero-bg {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 340px;
+  background:
+    url('W-C-C_20250803_211649_0000.png') center 55px/210px no-repeat,
+    var(--main-bg);
+  z-index: 0;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+/* Container */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 48px auto 28px;
+  background: #fffbe8;
+  border-radius: 22px;
+  padding: 40px 35px 32px;
+  border: 2px solid rgba(253, 199, 113, 0.27);
+  box-shadow: 0 4px 24px rgba(253, 199, 113, 0.11);
+}
+
+/* Headings */
+h1 {
+  font-family: 'Bangla', 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: 18px;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #bf262c 10%, #fdc771 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h1 .emoji {
+  font-size: 1.8rem;
+  vertical-align: middle;
+  margin-left: 4px;
+  filter: drop-shadow(0 1px 6px rgba(253, 199, 113, 0.47));
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: var(--primary);
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+  margin: 32px 0 10px;
+  letter-spacing: .5px;
+}
+
+/* Descriptions */
+.description {
+  font-family: 'Bangla','Roboto', sans-serif;
+  font-size: 1.16rem;
+  color: #283845;
+  text-align: center;
+  margin: 0 0 26px;
+  background: #fff8e4;
+  border-radius: 12px;
+  padding: 18px 16px;
+  box-shadow: 0 2px 10px rgba(253, 199, 113, 0.09);
+}
+
+/* Form rows */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-weight: 700;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  font-family: 'Bangla', 'Roboto', sans-serif;
+  padding: 12px 14px;
+  border: 1.5px solid #fdeccf;
+  background: #fdf3e3;
+  border-radius: 8px;
+  transition: border-color .25s, box-shadow .25s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 3px rgba(253, 236, 207, 0.6);
+  outline: none;
+}
+
+textarea {
+  min-height: 56px;
+  resize: vertical;
+}
+
+/* File input */
+#photo {
+  background: var(--upload-bg);
+  border: 1.5px dashed var(--upload-accent);
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+
+input[type=file]::file-selector-button {
+  margin-right: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter .2s;
+}
+
+input[type=file]::file-selector-button:hover {
+  filter: brightness(1.05);
+}
+
+/* Radio group */
+.radio-fieldset {
+  border: 1.5px solid #fdeccf;
+  background: #fffbea;
+  border-radius: 12px;
+  padding: 14px 14px 8px;
+  margin-bottom: 18px;
+}
+
+.radio-fieldset legend {
+  font-weight: 700;
+}
+
+.radio-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 6px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Declaration */
+.declaration {
+  font-weight: 700;
+  background: #fff2e6;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 3px 10px rgba(253, 199, 113, 0.12);
+  padding: 12px 16px;
+  border-radius: 9px;
+  margin: 18px 0 10px;
+  line-height: 1.5;
+}
+
+/* Submit */
+button[type=submit] {
+  font-family: 'Bangla', 'Poppins', sans-serif;
+  width: 100%;
+  padding: 16px 0;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.20rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--btn-bg);
+  cursor: pointer;
+  margin-top: 18px;
+  box-shadow: 0 5px 22px rgba(253, 199, 113, 0.18);
+  transition: transform .25s, box-shadow .25s;
+}
+
+button[type=submit]:hover {
+  transform: scale(1.03) translateY(-2px);
+  box-shadow: 0 9px 36px rgba(253, 199, 113, 0.28);
+}
+
+/* Feedback */
+.feedback {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 13px 32px;
+  border-radius: 10px;
+  display: none;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .7s, transform .5s;
+  z-index: 99;
+}
+
+.feedback.success {
+  background-color: var(--primary);
+}
+
+.feedback.error {
+  background-color: var(--accent);
+}
+
+#successMsg {
+  margin-top: 14px;
+  color: var(--primary);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Shake animation */
+@keyframes shake {
+
+  10%,
+  90% {
+    transform: translateX(-4px);
+  }
+
+  20%,
+  80% {
+    transform: translateX(6px);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translateX(-10px);
+  }
+
+  40%,
+  60% {
+    transform: translateX(10px);
+  }
+}
+
+input.shake,
+button.shake {
+  animation: shake .55s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+/* Responsive */
+@media (min-width:1200px) {
+  .container {
+    max-width: 720px;
+    padding: 45px;
+  }
+}
+
+@media (max-width:1199px) and (min-width:992px) {
+  .container {
+    max-width: 660px;
+  }
+}
+
+@media (max-width:575px) {
+  .container {
+    margin: 22px 14px;
+    padding: 26px 14px;
+  }
+}
+
+@media (max-width:359px) {
+  .container {
+    margin: 18px 10px;
+    padding: 22px 10px;
+  }
+}

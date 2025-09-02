@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>We Can Change (WCC) - Membership Form</title>
+
+    <!-- Bangla font from Maateen -->
+    <link href="https://fonts.maateen.me/bangla/font.css" rel="stylesheet" />
+
+    <!-- Google Fonts for Latin fallback -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="hero-bg"></div>
+
+    <main class="container" role="main">
+        <h1>We Can Change (WCC) <span class="emoji">🌱</span></h1>
+
+        <p id="introText" class="description">
+            We Can Change (WCC) হলো ঝালকাঠি জেলার উন্নয়ন ও কল্যাণে কাজ করা একটি স্বেচ্ছাসেবী সামাজিক সংগঠন। শিক্ষা,
+            স্বাস্থ্য, পরিবেশ, সংস্কৃতি, মানবিক সহায়তা ও ক্যারিয়ার কাউন্সেলিংয়ের মাধ্যমে ইতিবাচক পরিবর্তন আনার লক্ষ্য
+            নিয়ে কাজ করছে। সদস্য হয়ে সমাজের উন্নয়নে অবদান রাখতে যোগ দিন।
+        </p>
+
+        <form id="wccForm" enctype="multipart/form-data" autocomplete="off" aria-describedby="introText">
+            <h2><strong>ব্যক্তিগত তথ্য</strong></h2>
+
+            <div class="form-group">
+                <label for="name_bn">পূর্ণ নাম (বাংলা)</label>
+                <input id="name_bn" name="name_bn" type="text" required />
+            </div>
+
+            <div class="form-group">
+                <label for="name_en">পূর্ণ নাম (ইংরেজী)</label>
+                <input id="name_en" name="name_en" type="text" required />
+            </div>
+
+            <div class="form-group">
+                <label for="dob">জন্ম তারিখ</label>
+                <input id="dob" name="dob" type="text" placeholder="দিন / মাস / বছর" required />
+            </div>
+
+            <div class="form-group">
+                <label for="father_name">পিতার নাম</label>
+                <input id="father_name" name="father_name" type="text" required />
+            </div>
+
+            <div class="form-group">
+                <label for="mother_name">মাতার নাম</label>
+                <input id="mother_name" name="mother_name" type="text" required />
+            </div>
+
+            <div class="form-group">
+                <label for="nid_brn">এনআইডি / জন্ম নিবন্ধন নম্বর</label>
+                <input id="nid_brn" name="nid_brn" type="text" required />
+            </div>
+
+            <div class="form-group">
+                <label for="blood_group">রক্তের গ্রুপ</label>
+                <select id="blood_group" name="blood_group" required>
+                    <option value="">নির্বাচন করুন</option>
+                    <option>এ+</option>
+                    <option>এ-</option>
+                    <option>বি+</option>
+                    <option>বি-</option>
+                    <option>এবি+</option>
+                    <option>এবি-</option>
+                    <option>ও+</option>
+                    <option>ও-</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">মোবাইল নাম্বার</label>
+                <input id="mobile" name="mobile" type="tel" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">ইমেইল (যদি থাকে)</label>
+                <input id="email" name="email" type="email" />
+            </div>
+
+            <div class="form-group">
+                <label for="present_address">বর্তমান ঠিকানা</label>
+                <textarea id="present_address" name="present_address" rows="2" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="permanent_address">স্থায়ী ঠিকানা</label>
+                <textarea id="permanent_address" name="permanent_address" rows="2" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="hsc_result">শেষ একাডেমিক রেজাল্ট (এইচএসসি এর জিপিএ)</label>
+                <input id="hsc_result" name="hsc_result" type="text" required />
+            </div>
+
+            <div class="form-group">
+                <label for="institution">ইন্সটিটিউশন নাম</label>
+                <input id="institution" name="institution" type="text" required />
+            </div>
+
+            <div class="form-group">
+                <label for="photo">প্রোফাইল ছবি আপলোড</label>
+                <p id="photoHint" class="hint">JPEG/PNG, সর্বোচ্চ 2MB;</p>
+                <input id="photo" name="photo" type="file" accept="image/*" aria-describedby="photoHint" required />
+            </div>
+
+            <h2>প্রফেশনাল তথ্য (যদি থাকে)</h2>
+            <p id="proText" class="professional-info">
+                আপনার বর্তমান পেশাগত তথ্য (যদি থাকে) প্রদান করুন। এতে আমরা আপনার অভিজ্ঞতা ও দক্ষতা সম্পর্কে জানতে পারব
+                এবং WCC-এর কাজে আপনার অবদান কিভাবে সহায়ক হতে পারে তা বুঝতে পারব। আপনি যদি ছাত্র হন বা বর্তমানে কর্মরত না
+                থাকেন, তবে এই অংশটি এড়িয়ে যেতে পারেন।
+            </p>
+
+            <div class="form-group">
+                <label for="profession">পেশা</label>
+                <input id="profession" name="profession" type="text" aria-describedby="proText" />
+            </div>
+
+            <div class="form-group">
+                <label for="workplace">কর্মস্থল / প্রতিষ্ঠান</label>
+                <input id="workplace" name="workplace" type="text" aria-describedby="proText" />
+            </div>
+
+            <h2>মেম্বারশিপ তথ্য</h2>
+            <p id="memberText" class="membership-info">
+                আপনার পছন্দের সদস্যপদ ধরণ ও কমিটি নির্বাচন করুন। এটি WCC-তে আপনার ভূমিকা ও সম্পৃক্ততার মাত্রা নির্ধারণ
+                করবে। আপনার নির্বাচন অনুযায়ী আপনাকে সঠিক কমিটিতে অন্তর্ভুক্ত করা হবে যাতে কার্যকরভাবে অংশগ্রহণ নিশ্চিত
+                হয়।
+            </p>
+
+            <fieldset class="radio-fieldset" aria-describedby="memberText">
+                <legend>মেম্বারশিপের ধরণ</legend>
+                <div class="radio-row">
+                    <div class="radio-option">
+                        <input id="mem_general" type="radio" name="membership" value="General" required />
+                        <label for="mem_general">সাধারণ সদস্য</label>
+                    </div>
+                    <div class="radio-option">
+                        <input id="mem_life" type="radio" name="membership" value="Lifetime" />
+                        <label for="mem_life">আজীবন সদস্য</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="wing">কমিটি উইং</label>
+                <select id="wing" name="wing" required aria-describedby="memberText">
+                    <option value="">নির্বাচন করুন</option>
+                    <option>শিক্ষা উইং</option>
+                    <option>সাংস্কৃতিক উইং</option>
+                    <option>স্বাস্থ্য উইং</option>
+                    <option>খেলাধুলা উইং</option>
+                    <option>পরিবেশ সংরক্ষণ উইং</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">WCC-তে যোগ দিতে চাই কেন?</label>
+                <textarea id="reason" name="reason" rows="3" required aria-describedby="memberText"></textarea>
+            </div>
+
+            <p class="declaration">
+                আমি ঘোষণা করছি, WCC-এর সংবিধান ও শর্তাবলী মেনে চলবো, অনৈতিক কর্মকাণ্ডে নিজেকে জড়াবো না, সংগঠনের সকল
+                সামাজিক উন্নয়নমূলক কার্যক্রমে অংশগ্রহণ করবো।
+            </p>
+
+            <button type="submit" id="submitBtn" class="bangla"><span>✅</span> সাবমিট করুন</button>
+
+            <div id="successMsg" role="status" aria-live="polite"></div>
+        </form>
+    </main>
+
+    <div id="form-feedback" class="feedback" role="alert"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
