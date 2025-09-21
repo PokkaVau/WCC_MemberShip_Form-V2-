@@ -4,10 +4,9 @@ const feedback = document.getElementById('form-feedback');
 const successMsg = document.getElementById('successMsg');
 const submitBtn = document.getElementById('submitBtn');
 
-// GAS Web App URL
-const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbziM0N_zWTI_AaSND5OaRryr-SGSj3Sw8D4SKpXtnJ5XeCF5B3WM_5IcGmW-BBR5fs/exec';
+// GAS Web App URL (update this)
+const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz9tq09WjmnpVRQGgC3WDRhNv3mWR9vZ9i4cGLIqnkDOZ7CYHlYUaFYBGHPKHfK_64a/exec';
 
-// ===== helpers =====
 function showFeedback(message, success = true) {
   feedback.textContent = message;
   feedback.className = 'feedback ' + (success ? 'success' : 'error');
@@ -29,7 +28,7 @@ function fileToBase64(file) {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
-      const base64 = reader.result.split(',')[1]; // Remove data:image/xxx;base64, prefix
+      const base64 = reader.result.split(',')[1];
       resolve(base64);
     };
     reader.onerror = error => reject(error);
@@ -84,21 +83,16 @@ form.addEventListener('submit', async (e) => {
   submitBtn.disabled = true;
 
   try {
-    // Convert image to base64
     showFeedback('ছবি প্রস্তুত করা হচ্ছে...', true);
     const base64Image = await fileToBase64(file);
-    
-    // Prepare form data
+
     const formData = new FormData();
-    
-    // Add all form fields
     [...form.elements].forEach(el => {
       if (el.name && el.name !== 'photo' && el.value) {
         formData.append(el.name, el.value);
       }
     });
-    
-    // Add image data
+
     formData.append('image_base64', base64Image);
     formData.append('image_name', file.name);
     formData.append('image_type', file.type);
@@ -108,14 +102,12 @@ form.addEventListener('submit', async (e) => {
       method: 'POST',
       body: formData
     });
-
     if (!response.ok) {
       throw new Error(`Server error: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();
     console.log('Response:', data);
-    
     if (!data.ok) {
       throw new Error(data.error || 'Server responded with error');
     }
