@@ -73,17 +73,13 @@ form.addEventListener('submit', async (e) => {
   }
 
   const file = photoInput.files[0];
-  if (file.size > 2 * 1024 * 1024) {
-    showFeedback('ছবির সাইজ 2MB এর কম হতে হবে।', false);
-    photoInput.focus();
-    return;
-  }
 
-  submitBtn.innerHTML = '⏳ প্রসেসিং হচ্ছে...';
+
+  submitBtn.innerHTML = '⏳ প্রসেসিং হচ্ছে... কিছুক্ষণ অপেক্ষা করুন';
   submitBtn.disabled = true;
 
   try {
-    showFeedback('ছবি প্রস্তুত করা হচ্ছে...', true);
+    showFeedback('ছবি প্রস্তুত করা হচ্ছে... কিছুক্ষণ অপেক্ষা করুন', true);
     const base64Image = await fileToBase64(file);
 
     const formData = new FormData();
@@ -97,7 +93,7 @@ form.addEventListener('submit', async (e) => {
     formData.append('image_name', file.name);
     formData.append('image_type', file.type);
 
-    showFeedback('সার্ভারে পাঠানো হচ্ছে...', true);
+    showFeedback('সার্ভারে পাঠানো হচ্ছে... কিছুক্ষণ অপেক্ষা করুন', true);
     const response = await fetch(GAS_WEB_APP_URL, {
       method: 'POST',
       body: formData
