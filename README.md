@@ -13,7 +13,7 @@ A responsive membership form for **We Can Change (WCC)**, a social organization 
 ## 🛠️ Tech Stack
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** Google Apps Script (Web App)  
-- **Image Hosting:** ImgBB API  
+- **Image Hosting:** Google Driive  
 
 ## 📂 Files
 - `index.html` → Form structure  
