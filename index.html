@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="bn">
 
@@ -21,13 +22,16 @@
     <div class="hero-bg"></div>
 
     <main class="container" role="main">
+        <!-- Logo added at the very top -->
+        <div class="logo-container">
+            <img src="WCC_logo.png" alt="We Can Change (WCC) Logo" class="org-logo" />
+        </div>
+
         <h1>We Can Change (WCC) <span class="emoji">🌱</span></h1>
 
         <p id="introText" class="description">
            We Can Change (WCC) হলো বাংলাদেশের উন্নয়ন ও কল্যাণে কাজ করা একটি স্বেচ্ছাসেবী সামাজিক সংগঠন। শিক্ষা, স্বাস্থ্য, পরিবেশ, সংস্কৃতি, মানবিক সহায়তা এবং ক্যারিয়ার কাউন্সেলিংয়ের মাধ্যমে সমাজে ইতিবাচক পরিবর্তন আনার লক্ষ্য নিয়ে আমরা কাজ করছি।
-
 তারুণ্যের শক্তি, মানবিক মূল্যবোধ এবং সামাজিক দায়বদ্ধতাকে ধারণ করে একটি সচেতন, দক্ষ, দেশপ্রেমিক ও সমৃদ্ধ বাংলাদেশ গড়ে তোলার প্রত্যয়ে We Can Change নিরলসভাবে কাজ করে যাচ্ছে। সমাজের পিছিয়ে পড়া মানুষের পাশে দাঁড়ানো, শিক্ষার আলো ছড়িয়ে দেওয়া, স্বাস্থ্যসেবা সম্পর্কে সচেতনতা বৃদ্ধি, পরিবেশ সংরক্ষণ এবং তরুণদের দক্ষতা উন্নয়নের মাধ্যমে একটি ইতিবাচক ও টেকসই পরিবর্তন আনার স্বপ্নই আমাদের প্রেরণা।
-
 আপনিও এই পরিবর্তনের অংশ হতে পারেন। সদস্য হয়ে মানবিক, সামাজিক ও জাতীয় উন্নয়নের যাত্রায় যুক্ত হোন এবং একটি সুন্দর বাংলাদেশের বিনির্মাণে আপনার মূল্যবান অবদান রাখুন।
 
         </p>
@@ -112,7 +116,7 @@
 
             <div class="form-group">
                 <label for="photo">প্রোফাইল ছবি আপলোড</label>
-                <p id="photoHint" class="hint">JPEG/PNG</p>
+                <p id="photoHint" class="hint">JPEG/PNG, সর্বোচ্চ 2MB;</p>
                 <input id="photo" name="photo" type="file" accept="image/*" aria-describedby="photoHint" required />
             </div>
 
@@ -181,6 +185,17 @@
             <div id="successMsg" role="status" aria-live="polite"></div>
         </form>
     </main>
+
+    <!-- Footer with Facebook link -->
+    <footer class="site-footer">
+        <p>
+            আমাদের Facebook পেজটি ভিজিট করুন:
+            <a href="https://www.facebook.com/profile.php?id=61580304526553" target="_blank" rel="noopener noreferrer">
+                <span class="fb-icon">📘</span> We Can Change (WCC)
+            </a>
+        </p>
+        <p class="footer-copy">&copy; 2026 We Can Change. All rights reserved.</p>
+    </footer>
 
     <div id="form-feedback" class="feedback" role="alert"></div>
     <script src="script.js"></script>
