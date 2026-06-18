@@ -1,3 +1,4 @@
+/* style.css */
 /* Import Bangla font */
 @import url('https://fonts.maateen.me/bangla/font.css');
 
@@ -30,7 +31,7 @@ body {
   inset: 0 0 auto 0;
   height: 340px;
   background:
-    url('W-C-C_20250803_211649_0000.png') center 55px/210px no-repeat,
+    url('https://i.ibb.co/5YGBs0P/W-C-C-20250803-211649-0000.png') center 55px/210px no-repeat,
     var(--main-bg);
   z-index: 0;
 }
@@ -41,6 +42,26 @@ body {
   inset: 0;
   background: rgba(255, 255, 255, 0.1);
   pointer-events: none;
+}
+
+/* Logo Container - New addition */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.org-logo {
+  max-width: 120px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(191, 38, 44, 0.15);
+  border: 3px solid #fffbe8;
+  transition: transform 0.3s ease;
+}
+
+.org-logo:hover {
+  transform: scale(1.04);
 }
 
 /* Container */
@@ -221,6 +242,60 @@ button[type=submit]:hover {
   box-shadow: 0 9px 36px rgba(253, 199, 113, 0.28);
 }
 
+/* Footer Styles - New addition */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 18px 20px 12px;
+  max-width: 640px;
+  margin: 0 auto 30px;
+  background: rgba(255, 251, 232, 0.85);
+  border-radius: 16px;
+  border: 1px solid rgba(253, 199, 113, 0.2);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 12px rgba(191, 38, 44, 0.06);
+}
+
+.site-footer p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #273043;
+}
+
+.site-footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-footer a:hover {
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer a:hover .fb-icon {
+  filter: brightness(10);
+}
+
+.fb-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin-top: 10px;
+}
+
 /* Feedback */
 .feedback {
   position: fixed;
@@ -289,10 +364,16 @@ button.shake {
     max-width: 720px;
     padding: 45px;
   }
+  .site-footer {
+    max-width: 720px;
+  }
 }
 
 @media (max-width:1199px) and (min-width:992px) {
   .container {
+    max-width: 660px;
+  }
+  .site-footer {
     max-width: 660px;
   }
 }
@@ -302,11 +383,23 @@ button.shake {
     margin: 22px 14px;
     padding: 26px 14px;
   }
+  .site-footer {
+    margin: 0 14px 20px;
+    padding: 14px 14px 10px;
+  }
+  .site-footer a {
+    display: inline-block;
+    margin-top: 4px;
+  }
 }
 
 @media (max-width:359px) {
   .container {
     margin: 18px 10px;
     padding: 22px 10px;
+  }
+  .site-footer {
+    margin: 0 10px 16px;
+    padding: 12px 10px 8px;
   }
 }
